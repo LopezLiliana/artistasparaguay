@@ -1,0 +1,96 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.layout{
+  margin:0;
+  background-image: url('../public/fondo2.jpg');
+  background-repeat: repeat, repeat;
+  width: 100%;
+  height: 100%;
+  
+}
+
+body{
+  height: 100%;
+  flex: 1 1 auto;
+}
+
+nav {
+  align-self: center;
+}
+
+main {
+  margin:2rem;
+}
+
+.cards{
+  display: flex;
+  justify-content: space-between;
+}
+
+.card {
+  padding: 0;
+  margin: 1rem;
+}
+
+.card-img-top{
+  max-width: 100%;
+  justify-self: center;
+  align-self: center;
+  max-height: 15rem;
+}
+
+.btn-primary {
+  background-color: darkorange;
+}
+
+input:focus {
+  border: 3px solid #ffea2c;
+  border-color: #ffea2c;
+}
+
+.validador {
+  color:rgb(255, 0, 0);
+  border: 5px white ;
+}
+
+.recuadro{
+  background-color: #f8f2bd;
+  padding: 2rem;
+}
