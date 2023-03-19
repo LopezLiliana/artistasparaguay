@@ -15,7 +15,9 @@ const Login = () => {
         .then((res)=>{
             console.log('todo ok')
             console.log(res)
-           // navigate('/pirates')
+            localStorage.setItem('user', email)
+            
+            navigate('/artistas')
         }).catch((err)=>{
             console.log(err)
         })
@@ -24,13 +26,13 @@ const Login = () => {
 
     return (
             <div className='card-detail'>
-                    <form onSubmit={submitHandler} className='col-10 offset-1 mx-auto'> 
+                    <form onSubmit={submitHandler} className='col-6 offset-2 mx-auto'> 
                         <h3 className='text-center'>Login</h3>  
                         <label htmlFor="" className='form-label col-12 mx-auto'> Email</label><br/>
                         <input type="text" className='inpt col-12 mx-auto'onChange={(e)=>setEmail(e.target.value)}/><br/>
                         <label htmlFor="" className='form-label col-12 mx-auto'> Password</label><br/>
                         <input type="password" className='inpt col-12 mx-auto'onChange={(e)=>setPassword(e.target.value)}/><br/><br/>
-                        <button className='btn btn-special blue'> Login</button>
+                        <button className='btn btn-primary'> Login</button>
                     </form>
                 
             </div>

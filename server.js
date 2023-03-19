@@ -22,9 +22,6 @@ app.use(cors({
     credentials:true
 }))
 
-//Middleware
-app.use(express.json())
-app.use(express.urlencoded({extended:false}))
 
 // BASE DATOS
 require('./server/config/mongoose.config.js')

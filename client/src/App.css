@@ -39,18 +39,18 @@
 
 .layout{
   margin:0;
-  background-image: url('../public/fondo2.jpg');
-  background-repeat: repeat, repeat;
+  background-color: #E8E2E2!important;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   
 }
 
 body{
-  height: 100%;
+  height: 100vh;
+  
   flex: 1 1 auto;
-}
 
+}
 nav {
   align-self: center;
 }
@@ -61,21 +61,43 @@ main {
 
 .cards{
   display: flex;
-  justify-content: space-between;
+}
+
+.panel-principal{
+    background-color: white;
+    outline:none;
+    padding: 2rem;
+    
+    border-color:#fcef7c;
+    border-width: 0.2rem;
+    border-style: solid;
+    /*border-color:darkorange;*/
+    /*box-shadow:0 0 10px #ffea2c;*/
+    
 }
 
 .card {
   padding: 0;
   margin: 1rem;
+  width: initial;
+
+}
+
+.img-principal{
+  background-color: whitesmoke;
+  border-color:gray;
 }
 
 .card-img-top{
-  max-width: 100%;
-  justify-self: center;
-  align-self: center;
-  max-height: 15rem;
+  width: 100%;
+  height: 15vw;
+  object-fit: cover;
 }
 
+.card-btn{
+  width:70%;
+  align-self: center;
+}
 .btn-primary {
   background-color: darkorange;
 }
@@ -83,6 +105,46 @@ main {
 input:focus {
   border: 3px solid #ffea2c;
   border-color: #ffea2c;
+}
+
+.btn:hover {
+  background-color:  #ffea2c;
+}
+
+.validador {
+  color:rgb(255, 0, 0);
+  border: 5px white ;
+}
+
+.recuadro{
+  background-color: #f8f2bd;
+  padding: 0.05rem;
+  margin: 0.2rem;
+}
+
+.nav-link-custom {
+  color: #5D3891 !important;
+  font-weight: 700;
+  font-stretch: normal;
+  font-style: normal;
+}
+
+.navbar-brand {
+  margin-left: 2rem;
+  color: #5D3891 !important;
+}
+
+.layout li a {
+  color:  #5D3891 !important;
+  font-weight: 500;
+}
+.nav-header-custom {
+  box-shadow: 0 3px 6px 0 rgb(0 0 0 / 9%);
+}
+
+
+.agregar-cancion{
+  margin: 1rem;
 }
 
 .validador {
@@ -93,4 +155,24 @@ input:focus {
 .recuadro{
   background-color: #f8f2bd;
   padding: 2rem;
+}
+
+.nav-link-custom {
+  color: #5D3891 !important;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+}
+
+.navbar-brand {
+  margin-left: 2rem;
+  color: #5D3891 !important;
+}
+
+.nav-header-custom {
+  box-shadow: 0 3px 6px 0 rgb(0 0 0 / 9%);
+}
+
+.center {
+  align-self: center;
 }

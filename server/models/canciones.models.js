@@ -9,8 +9,7 @@ const SchemaCanciones = mongoose.Schema({
     },
     audioUrl:{
         type: String,
-        required: [true, "Por favor ingresa una url"],
-        minlength: [5, "Debe tener al menos 2 caracteres"]
+        minlength: [5, "Debe tener al menos 5 caracteres"]
     },
     genero:{
         type: String,
@@ -19,12 +18,30 @@ const SchemaCanciones = mongoose.Schema({
     clasificacion:{
         type: String,
         required: [true, "Por favor ingrese una frase"],
-        minlength: [10, "La frase debe tener al menos 5 caracteres"]
+        minlength: [5, "La frase debe tener al menos 5 caracteres"]
     },
-    autorId:{
-        type: String
-        
-    }
+    autorId: {
+        type:String
+    },
+    
+    reviews:[{
+        user:{
+            type:mongoose.Types.ObjectId,
+            ref:"Usuario",
+            required:[false, "El usuario es requerido."]
+        },
+        rate:{
+            type:Number,
+            min:[0,"El rating debe ser mínimo 0."],
+            max:[5,"El rating debe ser máximo 5."],
+            required:[true, "El rating es requerido."]
+        },
+        description:{
+            type:String,
+            required:[true, "La descripcion es requerido."],
+            minlength:[10,"La descripción debe tener minimo 10 caracteres."]
+        }
+    }]
 })
 
 const Canciones = mongoose.model('Canciones', SchemaCanciones)

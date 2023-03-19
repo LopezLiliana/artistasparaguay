@@ -4,9 +4,9 @@ import AreaText from '../../components/AreaText';
 
 const ArtistaForm = ({state, dispatch, action, _id}) => {
     return(
-        <div className="row">
+        <div className="panel-principal row">
             <form className="form-horizontal col-sm-12 row">
-                <div className="col-sm-3" >
+                <div className="col-sm-3 img-principal" >
                     {state.imageUrl ? <img src={state.imageUrl} style= {{justifySelf:'center', maxWidth:'100%'}} alt=''/> :  <img style= {{justifySelf:'center', maxWidth:'100%'}}src='empty.jpg' alt=''/>     }
                 </div>
                 <div className="col-sm-5">

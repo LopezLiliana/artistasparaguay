@@ -8,7 +8,6 @@ module.exports = {
     signUpUsuario: async (req, res) =>{
         try{
             const nuevoUsuario = await Usuario.create(req.body)
-
             console.log('REGISTRO')
             console.log(req)
             const userToken = jwt.sign({_id:nuevoUsuario._id},  SECRET)
@@ -36,8 +35,9 @@ module.exports = {
                     if (passwordIsValid) {
                         const userToken = jwt.sign({_id: user._id}, SECRET)
                         res.status(201)
-                            .cookie('userToken', userToken, {httpOnly:true, expires:new Date(Date.now() )})
+                            .cookie('userToken', userToken, {httpOnly:true, expires:new Date(Date.now() + 900000)})
                             .json({ msg: "success!" })
+                            console.log(userToken);
                     } else {
                         res.json({ msg: "Invalid Email or Password" });
                     }
@@ -49,5 +49,6 @@ module.exports = {
         res.clearCookie('userToken')
         res.json({success:'Usuario salio'})
     }
+
 
 }

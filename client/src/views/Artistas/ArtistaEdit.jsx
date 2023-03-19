@@ -56,7 +56,7 @@ const ArtistaEdit = () => {
                 dispatch({type:'nombreArtistico', payload:datos.nombreArtistico})
                 dispatch({type:'descripcion', payload:datos.descripcion})
                 dispatch({type:'fechaNacimiento', payload:(datos.fechaNacimiento )})
- }).catch((err)=>{
+    }).catch((err)=>{
                 console.log("error " + err)
             })
         

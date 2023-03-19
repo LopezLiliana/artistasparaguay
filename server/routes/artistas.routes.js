@@ -6,4 +6,6 @@ module.exports = (app) =>{
     app.post('/artistas/create', ControladorArtistas.crearArtistas) 
     app.put('/artistas/edit/:id', ControladorArtistas.editarArtistas)
     app.delete('/artista/delete/:id', ControladorArtistas.eliminarArtistas)
+    app.put("/artista_canciones/:id",ControladorArtistas.addCancion)
+    app.delete("/artista_canciones/:id",ControladorArtistas.removeCancion)
 }

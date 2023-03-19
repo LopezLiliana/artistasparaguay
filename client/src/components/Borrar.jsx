@@ -19,8 +19,8 @@ const Borrar = ( props ) => {
     return (
         <>
         { props.clase ? 
-        <a href='' className={props.clase} onClick={deleteHandler}>Delete</a>
-        : <div className= 'btn btn-danger btn-sm' onClick={deleteHandler}>Delete</div>}
+        <a href='' className={props.clase} onClick={deleteHandler}>Borrar</a>
+        : <div className= 'btn btn-danger btn-sm' onClick={deleteHandler}>Borrar</div>}
         </>
     )
 }

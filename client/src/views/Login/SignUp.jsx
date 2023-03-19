@@ -72,7 +72,7 @@ const SignUp = () => {
         }, {withCredentials:false})
         .then((res)=>{
             console.log(res)
-           // navigate('/pirates')
+            navigate('/')
         }).catch((err)=>{
             console.log(err)
         })

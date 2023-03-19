@@ -1,5 +1,5 @@
 import React, { useReducer, useState } from  'react';
-import ArtistaForm from './CancionesForm';
+import CancionForm from './CancionesForm';
 
 function reducer(state, action) {
     if (action=="ALL")  {
@@ -17,22 +17,22 @@ function reducer(state, action) {
 
 const initialState = {
     nombre: '',
-    imageUrl: '',  
-    nombreArtistico: '',
+    audioUrl: '',  
+    genero: '',
     lugarNacimiento:  '',
-    descripcion: '',
-    fechaNacimiento:  ''
+    clasificacion: '',
+    autorId:  ''
 }  
 
 
-const ArtistaCreate = (props) => {
+const CancionCreate = (props) => {
     const [state, dispatch] = useReducer(reducer, initialState);
 
     return(
         <div className='container'>
-            <ArtistaForm state={state} dispatch={dispatch} action="create"/>
+            <CancionForm state={state} dispatch={dispatch} action="create"/>
         </div>
     );
 };
     
-export default ArtistaCreate;
+export default CancionCreate;

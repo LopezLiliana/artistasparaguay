@@ -15,7 +15,6 @@ const SchemaCategorias = mongoose.Schema({
     },
     cancionId:{
         type: String
-        
     }
 })
 

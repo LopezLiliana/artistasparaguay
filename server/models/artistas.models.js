@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 
+
 // Schema MODELO aka Tabla aka Colection
 const SchemaArtistas = mongoose.Schema({
     nombre:{
@@ -27,6 +28,15 @@ const SchemaArtistas = mongoose.Schema({
         required: [true, "Por favor ingresa su nombre"],
         minlength: [15, "El nombre debe tener al menos 2 caracteres"]
     },
+
+    canciones:[{
+        cancion:{
+            type:mongoose.Types.ObjectId,
+            ref:"Canciones",
+            required:[true, "La canción es necesaria es requerido."]
+        },
+    }],
+
     fechaNacimiento:{
         type: Date,
         required: [true, "Por favor ingresa un valor en HookHand"]

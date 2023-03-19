@@ -11,6 +11,11 @@ import ArtistaShow from './views/Artistas/ArtistaShow';
 import ArtistaEdit from './views/Artistas/ArtistaEdit';
 import Layout from './layout/Layout';
 import Artistas from './views/Artistas/Artistas';
+import CancionAll from './views/Canciones/CancionesAll';
+import CancionShow from './views/Canciones/CancionShow';
+import CancionCreate from './views/Canciones/CancionesCreate';
+import CancionEdit from './views/Canciones/CancionesEdit';
+import ArtistaCanciones from './views/Artistas/ArtistaCanciones';
 
 function App() {
   return (
@@ -23,9 +28,13 @@ function App() {
                 <Route path="/artistas" element={<Artistas/>}/>
                 <Route path="/login" element={<Login/>}/>
                 <Route path="/artistas/todos" element={<ArtistaAll/>}/>
-                <Route path="/artistas/:id" element={<ArtistaShow/>}/>
                 <Route path="/artistas/new" element={<ArtistaCreate/>}/>
                 <Route path="/artistas/:id/edit" element={<ArtistaEdit/>}/>
+                <Route path="/canciones/todos" element={<CancionAll/>}/>
+                <Route path="/canciones/:id" element={<CancionShow/>}/>
+                <Route path="/canciones/new" element={<CancionCreate/>}/>
+                <Route path="/canciones/:id/edit" element={<CancionEdit/>}/>
+                <Route path="/artistas/:id" element={<ArtistaCanciones/>}/>
           </Routes> 
         </BrowserRouter>
       </div>

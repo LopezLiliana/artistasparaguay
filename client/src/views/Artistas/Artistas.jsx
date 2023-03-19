@@ -6,8 +6,11 @@ import { Link } from 'react-router-dom';
 const Artistas = (props) => {
     
     const [lista, setLista] = useState([])
+    const [user, setUser] = useState()
 
     useEffect(()=>{
+        let u = localStorage.getItem('user');
+        setUser(u)
         axios.get('http://localhost:8000/artistas')
         .then((res)=>{
             console.log(res)
@@ -17,21 +20,23 @@ const Artistas = (props) => {
         })
     }, [])
     return(
-        <div className=" cards row">
-            <h2>Artistas</h2>
-            {lista.map((item, index) => (
-                <div className="card col-lg-3" >
-                    
-                    {item.imageUrl ? <img src={item.imageUrl} class="card-img-top" alt=''/> :  <img class="card-img-top" src='empty.jpg' alt=''/>     }
-                    <div class="card-body">
-                        <h5 class="card-title">{item.nombreArtistico}</h5>
-                        <p class="card-text">{item.descripcion}</p>
-                        <Link className="btn btn-primary" to={`./${item._id}`} >Reportorio </Link>
+            <div>
+                <h2>Artistas</h2>
+                <div className=" cards">
+                {lista.map((item, index) => (
+                    <div key={index} className="card" >
+                        {item.imageUrl ? <img src={item.imageUrl} className="card-img-top" alt=''/> :  <img className="card-img-top" src='empty.jpg' alt=''/>     }
+                        <div className="card-body">
+                            <h5 className="card-title">{item.nombreArtistico}</h5>
+                            <p className="card-text">{item.descripcion}</p>
+                        </div>
+                        <Link className="btn btn-primary card-btn" to={`./${item._id}`} >Repertorio </Link>
+                        <br/>
                     </div>
-                </div>
-    ))}   
-        </div>
-    );
+                ))}  
+                </div> 
+            </div>
+        );
 };
 export default Artistas;
 
